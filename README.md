@@ -1,4 +1,4 @@
-![Alt text](screenshot.jpg "screenshot")
+![Alt text](https://github.com/arievanleyen/xpen/blob/master/screenshot.jpg "screenshot")
 
 Computers with Windows have several programs that make Chinese computing an easy task. On Linux these are rather poor, especially hand writing characters is almost impossible.
 
