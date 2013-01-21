@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="preferences">
+    <property name="title" translatable="yes">Preferences</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="deletable">False</property>
+    <property name="transient_for">window</property>
+    <signal name="delete_event" handler="on_close_window"/>
+    <child>
+      <object class="GtkVBox" id="vbox2">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkNotebook" id="notebook1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkTable" id="table1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="n_rows">4</property>
+                <property name="n_columns">2</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label14">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">command that is used to
+paste from clipboard</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Paste key(s):</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEventBox" id="eventbox3">
+                    <property name="visible">True</property>
+                    <property name="events">GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                    <property name="visible_window">False</property>
+                    <child>
+                      <object class="GtkEntry" id="entry1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="events">GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                        <property name="tooltip_text" translatable="yes">hit the keys for pasting
+from clipboard</property>
+                        <property name="invisible_char">●</property>
+                        <signal name="query_tooltip" handler="on_tooltip"/>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label15">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">backspace key to be used</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Backspace key:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEventBox" id="eventbox4">
+                    <property name="visible">True</property>
+                    <property name="events">GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                    <property name="visible_window">False</property>
+                    <child>
+                      <object class="GtkEntry" id="entry2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="events">GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                        <property name="tooltip_text" translatable="yes">hit the backspace key</property>
+                        <property name="invisible_char">●</property>
+                        <signal name="query_tooltip" handler="on_tooltip"/>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label16">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">input device to be used
+(mice, pen etc.)</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Default input device:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton9">
+                    <property name="label" translatable="yes">use speech</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">play pronunciation</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBox" id="combobox1">
+                    <property name="visible">True</property>
+                    <property name="model">liststore1</property>
+                    <property name="active">0</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext1"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">relation between xpen
+and destination program</property>
+                <property name="label" translatable="yes">Input</property>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkTable" id="table2">
+                <property name="visible">True</property>
+                <property name="n_rows">5</property>
+                <property name="n_columns">2</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label9">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">transparancy of the
+main window</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Opacity window:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkHScale" id="hscale1">
+                    <property name="width_request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">use slider to change the transparancy</property>
+                    <property name="adjustment">adjustment1</property>
+                    <property name="lower_stepper_sensitivity">on</property>
+                    <property name="upper_stepper_sensitivity">on</property>
+                    <property name="show_fill_level">True</property>
+                    <property name="fill_level">1</property>
+                    <property name="digits">2</property>
+                    <property name="draw_value">False</property>
+                    <property name="value_pos">right</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label8">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">font to be used for the
+alternative candidates</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Font candidates:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFontButton" id="fontbutton1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">choose font and size</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                    <signal name="font_set" handler="apply_font"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label13">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The color to be used 
+for drawing</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Pen color:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkColorButton" id="colorbutton1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to select color</property>
+                    <property name="focus_on_click">False</property>
+                    <property name="color">#000000000000</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton1">
+                    <property name="label" translatable="yes">Show raster + color</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">enable the raster</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkColorButton" id="colorbutton2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">select a color for
+the raster</property>
+                    <property name="focus_on_click">False</property>
+                    <property name="color">#000000000000</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton8">
+                    <property name="label" translatable="yes"> Show tooltips</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">enable tooltips</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label4">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">settings for the appearance
+of the xpen</property>
+                <property name="label" translatable="yes">Interface</property>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkTable" id="table3">
+                <property name="visible">True</property>
+                <property name="n_rows">9</property>
+                <property name="n_columns">2</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkLabel" id="label10">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">the speed of recognition</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Recognition speed:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkHScale" id="hscale2">
+                    <property name="width_request">100</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">use slider to change the speed</property>
+                    <property name="adjustment">adjustment2</property>
+                    <property name="lower_stepper_sensitivity">on</property>
+                    <property name="upper_stepper_sensitivity">on</property>
+                    <property name="show_fill_level">True</property>
+                    <property name="fill_level">10</property>
+                    <property name="digits">0</property>
+                    <property name="draw_value">False</property>
+                    <property name="value_pos">right</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label12">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">which sets should be
+recognized</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Default recognition:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton2">
+                    <property name="label" translatable="yes">Simplified (GB)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton3">
+                    <property name="label" translatable="yes">Traditional (Big5)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton4">
+                    <property name="label" translatable="yes">Digits (0..9)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton5">
+                    <property name="label" translatable="yes">Lowercase (a..z)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton6">
+                    <property name="label" translatable="yes">Uppercase (A..Z)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkCheckButton" id="checkbutton7">
+                    <property name="label" translatable="yes">Punctuation (?/!..:;)</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">use default</property>
+                    <property name="draw_indicator">True</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label11">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">the keys that are used
+to change the recognition
+mode</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">Toggle keys:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label17">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">key to use when switching
+to default settings</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">  Swich to default:</property>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button3">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button4">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button5">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button6">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button7">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button8">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="button9">
+                    <property name="label" translatable="yes">not set</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">click to set or reset</property>
+                    <signal name="clicked" handler="on_select_key"/>
+                    <signal name="query_tooltip" handler="on_tooltip"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label6">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">settings related to the
+recognition engine</property>
+                <property name="label" translatable="yes">Recognition</property>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="position">2</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="scrolledwindow1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hscrollbar_policy">never</property>
+                <child>
+                  <object class="GtkViewport" id="viewport1">
+                    <property name="visible">True</property>
+                    <property name="resize_mode">queue</property>
+                    <child>
+                      <object class="GtkTable" id="table5">
+                        <property name="visible">True</property>
+                        <property name="n_rows">14</property>
+                        <property name="n_columns">2</property>
+                        <child>
+                          <object class="GtkLabel" id="label19">
+                            <property name="visible">True</property>
+                            <property name="tooltip_text" translatable="yes">key code that is detected</property>
+                            <property name="label" translatable="yes">Key code</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="label20">
+                            <property name="visible">True</property>
+                            <property name="tooltip_text" translatable="yes">the name to use for that
+key (code)</property>
+                            <property name="label" translatable="yes">Name</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button10">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">1</property>
+                            <property name="bottom_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button11">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button12">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button13">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button14">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">5</property>
+                            <property name="bottom_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button15">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">6</property>
+                            <property name="bottom_attach">7</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button16">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">7</property>
+                            <property name="bottom_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button17">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">8</property>
+                            <property name="bottom_attach">9</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button18">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">9</property>
+                            <property name="bottom_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button19">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">10</property>
+                            <property name="bottom_attach">11</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button20">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">11</property>
+                            <property name="bottom_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button21">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">12</property>
+                            <property name="bottom_attach">13</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button22">
+                            <property name="label" translatable="yes">not set</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">click to detect a key and set
+the label / or reset the key</property>
+                            <signal name="clicked" handler="on_def_key"/>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="top_attach">13</property>
+                            <property name="bottom_attach">14</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry4">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">2</property>
+                            <property name="bottom_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry5">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">3</property>
+                            <property name="bottom_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry6">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">4</property>
+                            <property name="bottom_attach">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry7">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">5</property>
+                            <property name="bottom_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry8">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">6</property>
+                            <property name="bottom_attach">7</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry9">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">7</property>
+                            <property name="bottom_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry10">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">8</property>
+                            <property name="bottom_attach">9</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry11">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">9</property>
+                            <property name="bottom_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry12">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">10</property>
+                            <property name="bottom_attach">11</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry13">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">11</property>
+                            <property name="bottom_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry14">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">12</property>
+                            <property name="bottom_attach">13</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="entry15">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">label to be used for this key</property>
+                            <property name="invisible_char">●</property>
+                            <signal name="query_tooltip" handler="on_tooltip"/>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="right_attach">2</property>
+                            <property name="top_attach">13</property>
+                            <property name="bottom_attach">14</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label18">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">names for commonly
+used keys (used in the
+recognition settings)</property>
+                <property name="label" translatable="yes">Keys</property>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="position">3</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox4">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="button1">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">discard changes</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_close_window"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button2">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">save preferences</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="store_preferences"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="value">0.69999999999999996</property>
+    <property name="lower">0.29999999999999999</property>
+    <property name="upper">1</property>
+    <property name="step_increment">0.050000000000000003</property>
+    <property name="page_increment">0.050000000000000003</property>
+    <signal name="value_changed" handler="on_opacity_change"/>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="lower">1</property>
+    <property name="upper">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">1</property>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="title" translatable="yes">Xpen</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="icon">xpen.png</property>
+    <property name="accept_focus">False</property>
+    <property name="decorated">False</property>
+    <property name="opacity">0.69999999999999996</property>
+    <signal name="destroy" handler="gtk_main_quit"/>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkHBox" id="hbox2">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkEventBox" id="dragbar">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">use left button to drag window 
+right button to open options</property>
+                <property name="visible_window">False</property>
+                <property name="above_child">True</property>
+                <signal name="button_press_event" handler="on_drag"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+                <child>
+                  <object class="GtkLabel" id="debug">
+                    <property name="visible">True</property>
+                    <property name="events"></property>
+                    <property name="xalign">0.10000000149011612</property>
+                    <property name="single_line_mode">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="eventbox1">
+                <property name="width_request">30</property>
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <signal name="button_press_event" handler="on_window_destroy"/>
+                <child>
+                  <object class="GtkLabel" id="label1">
+                    <property name="visible">True</property>
+                    <property name="yalign">0.20000000298023224</property>
+                    <property name="label" translatable="yes">X</property>
+                    <signal name="button_press_event" handler="on_window_destroy"/>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="image3">
+                <property name="width_request">25</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox5">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkImage" id="image2">
+                <property name="width_request">20</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkDrawingArea" id="drawingarea1">
+                <property name="height_request">250</property>
+                <property name="visible">True</property>
+                <property name="app_paintable">True</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="image6">
+                <property name="width_request">20</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox1">
+            <property name="visible">True</property>
+            <property name="tooltip_text" translatable="yes">Alternative candidates</property>
+            <child>
+              <object class="GtkImage" id="image4">
+                <property name="width_request">20</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event1">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop1">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event2">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop2">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event3">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop3">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event4">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop4">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event5">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop5">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event6">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop6">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">6</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event7">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop7">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">7</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event8">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop8">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">8</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEventBox" id="event9">
+                <property name="visible">True</property>
+                <property name="visible_window">False</property>
+                <child>
+                  <object class="GtkLabel" id="knop9">
+                    <property name="visible">True</property>
+                    <attributes>
+                      <attribute name="foreground" value="#000000000000"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">9</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="image5">
+                <property name="width_request">20</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">10</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEventBox" id="eventbox2">
+            <property name="visible">True</property>
+            <property name="visible_window">False</property>
+            <signal name="button_press_event" handler="on_show_window"/>
+            <child>
+              <object class="GtkImage" id="image1">
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">click to open the cedict dictionary</property>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="lookup">
+    <property name="title" translatable="yes">Lookup</property>
+    <property name="window_position">center</property>
+    <property name="default_width">400</property>
+    <property name="default_height">250</property>
+    <signal name="delete_event" handler="on_close_window"/>
+    <child>
+      <object class="GtkTable" id="table4">
+        <property name="visible">True</property>
+        <property name="n_rows">4</property>
+        <child>
+          <object class="GtkHBox" id="hbox7">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkEntry" id="entry16">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="has_focus">True</property>
+                <property name="tooltip_text" translatable="yes">search item (charachter,  translation or pinyin-numbers)</property>
+                <property name="invisible_char">●</property>
+                <signal name="key_press_event" handler="on_enter"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button23">
+                <property name="label">gtk-find</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">click to start searching</property>
+                <property name="use_stock">True</property>
+                <property name="focus_on_click">False</property>
+                <signal name="clicked" handler="on_search"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y_options"></property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow2">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="textview1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">Search result - click on a word to start a new search</property>
+                <property name="editable">False</property>
+                <property name="wrap_mode">word</property>
+                <property name="cursor_visible">False</property>
+                <property name="buffer">textbuffer1</property>
+                <property name="accepts_tab">False</property>
+                <signal name="button_press_event" handler="on_textview_click_event"/>
+                <signal name="motion_notify_event" handler="on_textview_motion_event"/>
+                <signal name="query_tooltip" handler="on_tooltip"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="top_attach">1</property>
+            <property name="bottom_attach">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox3">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="button25">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_close_window"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="top_attach">3</property>
+            <property name="bottom_attach">4</property>
+            <property name="y_options"></property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox6">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkButton" id="button24">
+                <property name="label" translatable="yes">Male</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image9</property>
+                <signal name="clicked" handler="on_male_press"/>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button26">
+                <property name="label" translatable="yes">Female</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image7</property>
+                <signal name="clicked" handler="on_female_press"/>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button27">
+                <property name="label" translatable="yes">Teacher</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image8</property>
+                <signal name="clicked" handler="on_teacher_press"/>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="top_attach">2</property>
+            <property name="bottom_attach">3</property>
+            <property name="y_options">GTK_FILL</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkTextTagTable" id="tags"/>
+  <object class="GtkListStore" id="liststore1">
+    <columns>
+      <!-- column-name voice -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Male</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Female</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Teacher</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkImage" id="image7">
+    <property name="visible">True</property>
+    <property name="stock">gtk-media-play</property>
+  </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="stock">gtk-media-play</property>
+  </object>
+  <object class="GtkImage" id="image9">
+    <property name="visible">True</property>
+    <property name="stock">gtk-media-play</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="tag_table">tags</property>
+  </object>
+</interface>

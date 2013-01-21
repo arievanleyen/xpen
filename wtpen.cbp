@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="xpen" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/xpen" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectIncludeDirsRelation="2" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="`pkg-config gtk+-2.0 --cflags`" />
+					<Add option="-export-dynamic" />
+					<Add option="-x c++" />
+					<Add directory="/home/aevl/Projects/wtpen" />
+				</Compiler>
+				<Linker>
+					<Add option="`pkg-config gtk+-2.0 --libs gmodule-2.0`" />
+					<Add library="/home/aevl/Projects/wtpen/RecoCore.o" />
+					<Add library="X11" />
+					<Add library="Xtst" />
+					<Add library="SDL" />
+					<Add directory="/home/aevl/Projects/wtpen" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="ln -sf data/RecoCore.rig RecoCore.o" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/xpen" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectIncludeDirsRelation="2" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="`pkg-config gtk+-2.0 --cflags`" />
+					<Add option="-export-dynamic" />
+					<Add option="-x c++" />
+					<Add directory="/home/aevl/Projects/wtpen" />
+				</Compiler>
+				<Linker>
+					<Add option="`pkg-config gtk+-2.0 --libs gmodule-2.0`" />
+					<Add library="/home/aevl/Projects/wtpen/RecoCore.o" />
+					<Add library="X11" />
+					<Add library="Xtst" />
+					<Add library="SDL" />
+					<Add directory="/home/aevl/Projects/wtpen" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="ln -sf data/RecoCore.rig RecoCore.o" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`pkg-config gtk+-2.0 --cflags`" />
+			<Add option="-export-dynamic" />
+			<Add option="-x c++" />
+			<Add directory="/usr/include/libgnomeui-2.0/" />
+			<Add directory="/usr/include/libgnome-2.0/libgnome/" />
+			<Add directory="../wtpen" />
+		</Compiler>
+		<Linker>
+			<Add option="`pkg-config gtk+-2.0 --libs gmodule-2.0`" />
+			<Add library="X11" />
+			<Add library="Xtst" />
+			<Add directory="../wtpen" />
+		</Linker>
+		<Unit filename="audio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="audio.h" />
+		<Unit filename="cedict.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="conv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="conv.h" />
+		<Unit filename="coordinate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="coordinate.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="preferences.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="toon_root.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="window.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="window.h" />
+		<Unit filename="wtlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wtlib.h" />
+		<Unit filename="wtpen.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1">
+				<lib name="WTPDA_GB2312.lib" />
+			</lib_finder>
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

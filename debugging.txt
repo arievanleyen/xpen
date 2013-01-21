@@ -1,0 +1,5 @@
+- compile the project in debug mode
+- open terminal
+- execute: G_DEBUG=fatal_warnings gdb ./xpen
+- r (run)
+- na een error: bt (backtrack)
