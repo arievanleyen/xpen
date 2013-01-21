@@ -8,3 +8,4 @@ Usage:
 Right click the top bar to open the options
 Left click the bottom bar to open the dictionary
 All buttons and entries have popup tips to make the program easy to use.
+
